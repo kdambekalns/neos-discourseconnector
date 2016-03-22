@@ -1,0 +1,49 @@
+'KDambekalns.Neos.DiscourseConnector:TopicsList':
+  superTypes:
+    'TYPO3.Neos:Content': true
+  ui:
+    label: 'Discourse Topics'
+    group: 'plugins'
+    icon: 'icon-book'
+    inspector:
+      groups:
+        'discourse':
+          label: 'Discourse'
+          position: 5
+  properties:
+    'baseUri':
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Base URI'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'discourse'
+    'categoryId':
+      type: integer
+      defaultValue: ''
+      ui:
+        label: 'Category ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'discourse'
+    'displayOpenClosed':
+      type: string
+      defaultValue: 'all'
+      ui:
+        label: 'Display closed'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'discourse'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'all':
+                label: 'All topics'
+                icon: 'icon-ok'
+              'open':
+                label: 'Only open'
+                icon: 'icon-unlock'
+              'closed':
+                label: 'Only closed'
+                icon: 'icon-lock'

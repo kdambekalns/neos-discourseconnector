@@ -1,0 +1,23 @@
+<h2>{category.name}</h2>
+
+<table class="discourse-connector topic-list">
+<thead>
+    <tr>
+        <th>Title</th>
+        <th>Views</th>
+        <th>Likes</th>
+        <th>Comments</th>
+    </tr>
+</thead>
+<tbody>
+<f:for each="{topics}" as="topic">
+    <tr>
+        <td><a href="{baseUri}/t/{topic.slug}/{topic.id}" target="_blank">{topic.title}</a></td>
+        <td>{topic.views}</td>
+        <td>{topic.like_count}</td>
+        <td>{topic.posts_count}</td>
+    </tr>
+</f:for>
+</tbody>
+</table>
+<p>List entries taken from the <a href="{baseUri}/c/{category.slugPath}">{category.name}</a> category on <a href="{baseUri}">{baseUri}</a>.</p>

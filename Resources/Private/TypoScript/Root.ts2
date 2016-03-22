@@ -1,0 +1,23 @@
+prototype(KDambekalns.Neos.DiscourseConnector:TopicsList) {
+    @class = 'KDambekalns\\Neos\\DiscourseConnector\\TypoScript\\TopicsListImplementation'
+    baseUri = ${q(node).property('baseUri')}
+    category = ${q(node).property('categoryId')}
+    displayOpenClosed = ${q(node).property('displayOpenClosed')}
+
+    hidePinnedTopics = ${true}
+
+    @cache {
+        mode = 'cached'
+        maximumLifetime = '43200'
+
+        context >
+
+        entryIdentifier {
+            node = ${node}
+        }
+
+        entryTags {
+            1 = ${'Node_' + node.identifier}
+        }
+    }
+}

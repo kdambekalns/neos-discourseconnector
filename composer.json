@@ -1,0 +1,14 @@
+{
+    "name": "kdambekalns/neos-discourseconnector",
+    "type": "typo3-flow-plugin",
+    "description": "Allows to include Discourse content into Neos",
+    "license": "MIT",
+    "require": {
+      "typo3/neos-nodetypes": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KDambekalns\\Neos\\DiscourseConnector\\": "Classes"
+        }
+    }
+}
